@@ -9,12 +9,44 @@
 </head>
 <body>
     <div class="container">
-        <h1>Gatos Aleatorios</h1>
-        <img src="/" id="foto1" alt="Gato Aleatorio">
-        <img src="/" id="foto2" alt="Gato Aleatorio">
-        <img src="/" id="foto3" alt="Gato Aleatorio">
-        <button onclick="getGatos()">Buscar un nuevo gato</button>
+        
+        <section id="randomGatos">
+            <div class="contenedorTitulo">    
+                <h1 id="tituloRandom"">Gatos Aleatorios</h1>
+                <button class="nuevasImagenes" onclick="getGatos()">Buscar un nuevo gato</button>
+            </div>
+            <div class="randomGatosImagenes">
+                <article class="articuloRandom">
+                    <img src="/" id="foto1" class="fotosAleatorias" alt="Gato Aleatorio">
+                    <label class="heart-button">
+                        <input type="checkbox">
+                        <span class="heart-icon">&#x2665;</span>
+                    </label>
+                </article>
+                <article class="articuloRandom">
+                    <img src="/" id="foto2" class="fotosAleatorias" alt="Gato Aleatorio">
+                    <label class="heart-button">
+                        <input type="checkbox">
+                        <span class="heart-icon">&#x2665;</span>
+                    </label>
+                </article>
+                <article class="articuloRandom">
+                    <img src="/" id="foto3" class="fotosAleatorias" alt="Gato Aleatorio">
+                    <label class="heart-button">
+                        <input type="checkbox">
+                        <span class="heart-icon">&#x2665;</span>
+                    </label>
+                </article>
+            </div>
+        </section>
+        <section id="favorites">
+            <h1>Gatos Favoritos</h1>
+            <article>
+                <img src="/" id="foto3" alt="Gato Aleatorio">
+                <button>Sacar de Favoritos</button>
+            </article>
+        </section>
         <script src="./src/main.js"></script>
-    </div>
+        </div>
 </body>
 </html>
