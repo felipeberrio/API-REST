@@ -1,7 +1,7 @@
 body{
     margin: 0;
     background: rgb(2,0,36);
-    background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,255,0,1) 100%);
+    background: radial-gradient(circle, rgba(2,0,36,1) 0%, #cccccc 100%);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -28,6 +28,8 @@ button:hover{
     background-color: rgb(73, 154, 127);
 }
 
+/* Generar random gatos */
+
 .contenedorTitulo{
     display: flex;
     flex-direction: column;
@@ -35,10 +37,10 @@ button:hover{
 }
 
 .contenedorTitulo h1{
-        text-align: center;
-        color: beige;
-        margin: 30px;
-        font-size: 20px;
+    text-align: center;
+    color: beige;
+    margin: 30px;
+    font-size: xx-large;
 }
 
 .contenedorTitulo button{
@@ -51,7 +53,7 @@ button:hover{
     align-items: center;
     justify-content: center;
     width: 800px;
-    margin: 50px 100px 50px 100px;
+    margin: 50px 100px 20px 100px;
     padding: 20px 0 40px;
     background:rgba(0, 0, 0, 0.321);
     flex-wrap: wrap;
@@ -108,15 +110,77 @@ color: #e74c3c;
 }
 
 
+/* SECCIÓN FAVORITOS */
+
+
+#favorites{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 800px;
+    margin: 20px 100px 50px 100px;
+    padding: 20px 0 40px;
+    background:rgba(0, 0, 0, 0.321);
+    flex-wrap: wrap;
+    backdrop-filter: blur(6px);
+    border-radius: 20px;
+}
 
 
 
 
-
-#favorites h1{
+#tittleFavorites h1{
     width: 700px;
     text-align: center;
     color: beige;
-    margin: 30px;
     font-size: 30px;
+}
+
+
+.articuloFavorito {
+    float: left;
+    position: relative;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+      
+.out-button {
+    position: absolute;
+    top: 35px;
+    right: 35px;
+    width: 10px;
+    height: 30px;
+}
+
+/* BOTON DE desfavorito */
+
+.out-button input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+    
+.out-icon {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+    color: #ccc;
+    transition: all 0.2s ease-in-out;
+    color: #e74c3c;
+}
+
+.out-button:hover .out-icon {
+    color: #cccccc;
+}
+
+.out-button input[type="checkbox"]:checked + .out-icon {
+    color: #cccccc;
 }

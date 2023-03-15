@@ -13,7 +13,7 @@
         <section id="randomGatos">
             <div class="contenedorTitulo">    
                 <h1 id="tituloRandom"">Gatos Aleatorios</h1>
-                <button class="nuevasImagenes" onclick="getGatos()">Buscar un nuevo gato</button>
+                <button class="nuevasImagenes" onclick="app()">Buscar un nuevo gato</button>
             </div>
             <div class="randomGatosImagenes">
                 <article class="articuloRandom">
@@ -40,10 +40,16 @@
             </div>
         </section>
         <section id="favorites">
-            <h1>Gatos Favoritos</h1>
-            <article>
-                <img src="/" id="foto3" alt="Gato Aleatorio">
-                <button>Sacar de Favoritos</button>
+            <div id="tittleFavorites">
+                <h1>Gatos Favoritos</h1>
+            </div>
+            <article class="articuloFavorito">
+                <img src="/" id="foto4" alt="Gato Aleatorio">
+                <!-- <button>Sacar de Favoritos</button> -->
+                <label class="out-button">
+                    <input type="checkbox">
+                    <span class="out-icon">	&#x25C0;</span>
+                </label>
             </article>
         </section>
         <script src="./src/main.js"></script>
