@@ -34,9 +34,21 @@ async function loadFavoriteMichis(){
         const data = await response.json();
         const img4 = document.getElementById('foto4');
 
+        
         if (!response.ok) {
             throw new Error(`Response error: ${response.status}`);
-        }
+        } 
+        console.log('FAVORITES');
+        console.log(data);
+    }catch(error){
+        const errorMessage = `Hubo un error: ${error.status} ${error.message}`;
+        SPAM_ERROR.innerHTML = errorMessage;
+        console.log(errorMessage);
+    }
+    
+    
+}
+
 
         // if (data.length < 0) {
         //     img4.src = data[0].url;
@@ -44,18 +56,7 @@ async function loadFavoriteMichis(){
         //     SPAM_ERROR.innerHTML = 'No se encontraron favoritos';
         // }
 
-        console.log('FAVORITES');
-        console.log(data);
-
-    }catch(error){
-        const errorMessage = `Hubo un error: ${error.status} ${error.message}`;
-        SPAM_ERROR.innerHTML = errorMessage;
-        console.log(errorMessage);
-    }
-}
-
-
-async function saveFavoriteMichis(checkbox) {
+async function saveFavoriteMichis() {
     try{
         const response = await fetch(API_URL_FAVORITES,{
         method: 'POST',
@@ -72,16 +73,39 @@ async function saveFavoriteMichis(checkbox) {
     
     if (response.status !== 200) {
         throw new Error(`Response error: ${response.status} ${response.message}`);
-    }
-    }catch(error){
+    }else{
+        // const toRender = [];
+        // const section = document.getElementById('#favorites')
+        
+        data.forEach(michi => {
+            console.log('aca')
+            const section = document.getElementById('favorites')
+            const art = document.createElement('article')
+            const img = document.createElement('img')
+            const btn = document.createElement('button')
+            const textBtn = document.createTextNode('Sacar Gato de favoritos')
+
+            img.src = michi.image.url
+            img.width = 150
+            btn.append(textBtn)
+            art.appendChild(img);
+            art.appendChild(btn);
+            // toRender.push(art)
+            section.appendChild(art)
+    });
+    // section.append(...toRender)
+}}
+
+catch(error){
         console.log('Savelotodo')
         const errorMessage = `Hubo un error: ${error.status} ${error.message}`;
         SPAM_ERROR.innerHTML = errorMessage;
         console.log(errorMessage);        
     }
 
-
-
 };
 
 app();
+
+
+
