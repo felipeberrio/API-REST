@@ -28,6 +28,10 @@ button:hover{
     background-color: rgb(73, 154, 127);
 }
 
+span{
+    margin: 20px;
+}
+
 /* Generar random gatos */
 
 .contenedorTitulo{
@@ -72,7 +76,7 @@ margin-bottom: 10px;
 .heart-button {
 position: absolute;
 top: 35px;
-right: 35px;
+right: 55px;
 width: 10px;
 height: 30px;
 }
