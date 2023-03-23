@@ -31,16 +31,32 @@ async function loadRandomMichis() {
     }
 }
 
+
+async function nuevoOguarda(){
+  const checkbox1 = document.getElementById('checkbo1');
+  const checkbox2 = document.getElementById('checkbo2');
+  const checkbox3 = document.getElementById('checkbo3');
+
+  console.log('Corregir esto')
+  checkbox1.addEventListener('click', function() { this.checked ? saveFavoriteMichis('id') : loadRandomMichis();});
+  checkbox2.addEventListener('click', function() { this.checked ? saveFavoriteMichis('id') : loadRandomMichis();});
+  checkbox3.addEventListener('click', function() { this.checked ? saveFavoriteMichis('id') : loadRandomMichis();});
+
+}
+
+
 async function saveFavoriteMichis(id) {
-    try {const res = await fetch(API_URL, {
+    try {const res = await fetch(API_URL_FAVORITES, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'X-API-KEY': API_KEY
       },
       body: JSON.stringify({
         image_id: id
       }),
     });
+
     const data = await res.json();
     console.log('Correct Save')
     console.log(res)
@@ -50,6 +66,7 @@ async function saveFavoriteMichis(id) {
       console.log(error)
     }
   }
+
 
 
   async function loadFavoriteMichis() {
