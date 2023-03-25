@@ -26,6 +26,7 @@ button{
 
 button:hover{
     background-color: rgb(73, 154, 127);
+    transition: all 0.5s ease-in-out;
 }
 
 span{
@@ -187,4 +188,25 @@ color: #e74c3c;
 
 .out-button input[type="checkbox"]:checked + .out-icon {
     color: #cccccc;
+}
+
+
+
+/* // Favoritos */
+
+#favorites article{
+    display: flex;
+    flex-direction: column;
+}
+
+#favorites h2{
+    width: 700px;
+    text-align: center;
+    color: beige;
+    font-size: 30px;
+}
+
+#favorites article button{
+    height: 40px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
 }

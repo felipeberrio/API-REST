@@ -24,25 +24,70 @@ async function loadRandomMichis() {
       img1.src = data[0].url;
       img2.src = data[1].url;
       img3.src = data[2].url;
-
+      img1.alt = data[0].id;
+      img2.alt = data[1].id;
+      img3.alt = data[2].id;
+      
     }catch (error){
         SPAM_ERROR.innerHTML = 'Hubo un error CARGANDO RANDOM MICHIS, ' + error.status + error.message;
         console.log(error); 
     }
 }
-
-
-async function nuevoOguarda(){
+function addCheckboxListeners() {
   const checkbox1 = document.getElementById('checkbo1');
+  checkbox1.addEventListener('click', function() { 
+    const img1 = document.getElementById('foto1');
+    this.checked ? saveFavoriteMichis(img1.alt) : app();
+  });
+  
   const checkbox2 = document.getElementById('checkbo2');
+  checkbox2.addEventListener('click', function() { 
+    const img2 = document.getElementById('foto2');
+    this.checked ? saveFavoriteMichis(img2.alt) : app();
+  });
+  
   const checkbox3 = document.getElementById('checkbo3');
-
-  console.log('Corregir esto')
-  checkbox1.addEventListener('click', function() { this.checked ? saveFavoriteMichis('id') : loadRandomMichis();});
-  checkbox2.addEventListener('click', function() { this.checked ? saveFavoriteMichis('id') : loadRandomMichis();});
-  checkbox3.addEventListener('click', function() { this.checked ? saveFavoriteMichis('id') : loadRandomMichis();});
-
+  checkbox3.addEventListener('click', function() { 
+    const img3 = document.getElementById('foto3');
+    this.checked ? saveFavoriteMichis(img3.alt) : app();
+  });
 }
+
+// function nuevoOguarda1(){
+//   const img1 = document.getElementById('foto1');
+
+//   const checkbox1 = document.getElementById('checkbo1');
+
+//   console.log(checkbox1)
+//   console.log(img1)
+//   console.log(img1.alt)
+//   checkbox1.addEventListener('click', function() { this.checked ? saveFavoriteMichis(img1.alt) : app();});
+//   console.log('despues1')
+
+
+// }
+// function nuevoOguarda2(){
+//   const img2 = document.getElementById('foto2');
+
+//   const checkbox2 = document.getElementById('checkbo2');
+//   console.log(checkbox2)
+//   console.log(img2)
+//   console.log(img2.alt)
+//   console.log('despues2')
+//   checkbox2.addEventListener('click', function() { this.checked ? saveFavoriteMichis(img2.alt) : app();});
+
+// }
+// function nuevoOguarda3(){
+//   const img3 = document.getElementById('foto3');
+
+//   const checkbox3 = document.getElementById('checkbo3');
+//   console.log(checkbox3)
+//   console.log(img3)
+//   console.log(img3.alt)
+//   console.log('despues3')
+//   checkbox3.addEventListener('click', function() { this.checked ? saveFavoriteMichis(img3.alt) : app();});
+
+// }
 
 
 async function saveFavoriteMichis(id) {
@@ -131,6 +176,7 @@ async function saveFavoriteMichis(id) {
   document.addEventListener('DOMContentLoaded', () => {
     // tu código aquí
     app();
+    addCheckboxListeners()
   });
 
 
