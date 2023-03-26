@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Fotos de Gatos</title>
 </head>
 <body>
@@ -40,6 +41,15 @@
                 </article>
             </div>
         </section>
+        <section id="uploadImage">
+            <h2>Sube la foto de tu gato</h2>
+            <form id="uploadForm">
+                <label for="file" class="custom-file-upload">Selecciona la foto<i class="fa fa-camera-retro"></i></label>
+                <input type="file" id="file" name="file" onchange="previewImage()"/>
+                <img id="preview" />
+                <button id="submitMichi" type="button" onclick="uploadMichiPhoto()">Subir foto de tu gato<i class="fa fa-paper-plane"></i></button>
+            </form>
+        </section>
         <section id="favorites">
             <div id="tituloFavorites">
                 <h1 id="tittleFavorites">Gatos Favoritos</h1>
@@ -53,6 +63,8 @@
                 </label>
             </article>
         </section>
+        
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
         <script src="./src/main.js"></script>
         </div>
 </body>

@@ -35,6 +35,12 @@ span{
 
 /* Generar random gatos */
 
+#uploadImage h2{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    text-align: center;
+}
+
 .contenedorTitulo{
     display: flex;
     flex-direction: column;
@@ -114,6 +120,66 @@ color: #e74c3c;
 color: #e74c3c;
 }
 
+/* SECCIÓN DE CARGAR FOTO  */
+
+
+#submitMichi,
+.custom-file-upload {
+  width: 260px;
+  height: 50px;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #DB3A34;
+  opacity: 0.6;
+  color: #fff;
+  transition: 0.5s;
+  margin: 20px 20px 0px 20px;
+  text-align: center;
+}
+
+.custom-file-upload:hover,
+#submitMichi:hover {
+  opacity: 1;
+}
+
+#submitMichi i,
+.custom-file-upload i {
+  margin-left: 12px;
+}
+
+.custom-file-upload {
+  border-radius: 20px 20px 0 0;
+  background-color: #f0f0f0;
+  color: #000;
+  line-height: 50px;
+  text-align: center;
+}
+
+#submitMichi {
+  border-radius: 0 0 20px 20px;
+  margin: 0px 20px 20px 20px;
+}
+
+#uploadForm {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#file {
+  display: none;
+}
+
+#preview {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  box-shadow: 0 40px 60px -6px black;
+  margin: 0 20px 0 20px;
+  border-color: #DB3A34;
+}
 
 /* SECCIÓN FAVORITOS */
 
