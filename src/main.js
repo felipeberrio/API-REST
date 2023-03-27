@@ -6,11 +6,11 @@ const API_URL_FAVORITES_DELETE = (id) =>
 const API_URL_UPLOAD = `https://api.thecatapi.com/v1/images/upload`;
 const API_KEY = "17d94b92-754f-46eb-99a0-65be65b5d18f";
 
-const api = axios.create({
+const api_axios = axios.create({
   baseURL: "https://api.thecatapi.com/v1/",
 });
 
-api.defaults.headers.common['X-API-KEY'] = API_KEY;
+api_axios.defaults.headers.common['X-API-KEY'] = API_KEY;
 
 
 const SPAM_ERROR = document.getElementById("error");
@@ -65,18 +65,23 @@ async function loadRandomMichis() {
 
 async function saveFavoriteMichis(id) {
   try {
-    const res = await fetch(API_URL_FAVORITES, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "X-API-KEY": API_KEY,
-      },
-      body: JSON.stringify({
-        image_id: id,
-      }),
-    });
 
-    const data = await res.json();
+
+
+    // const res = await fetch(API_URL_FAVORITES, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //     "X-API-KEY": API_KEY,
+    //   },
+    //   body: JSON.stringify({
+    //     image_id: id,
+    //   }),
+    // });
+
+    const {data, status} = await api_axios.post('/favourites',{
+      image_id: id,
+    });
     console.log("Correct Save");
     console.log({ data });
     loadFavoriteMichis();
